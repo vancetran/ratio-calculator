@@ -25,13 +25,10 @@
 	    var c = document.ratio.c;
 	    var d = document.ratio.d;
 
-	    if(trigger == 1 || trigger == 4)
-		{
+	    if(trigger == 1 || trigger == 4){
 			c.value = (a.value * d.value) / b.value;
-		}
-		
-		else if(trigger == 2 || trigger == 3)
-		{
+		}		
+		else if(trigger == 2 || trigger == 3){
 			d.value =  (b.value * c.value) / a.value;
 		}
 	    
@@ -63,13 +60,13 @@
 			
 			
 			<div id="cleft" class="half">
-				<input type="text" name="a" value="1" onkeyup="calculateRatio(1)">
-				<input type="text" name="b" value="1" onkeyup="calculateRatio(2)">
+				<input type="text" name="a" value="1" onkeyup="calculateRatio(1)" autocomplete="off">
+				<input type="text" name="b" value="1" onkeyup="calculateRatio(2)" autocomplete="off">
 			</div>
 
 			<div id="cright" class="half">
-				<input type="text" name="c" value="1" onkeyup="calculateRatio(3)">
-				<input type="text" name="d" value="1" onkeyup="calculateRatio(4)">
+				<input type="text" name="c" value="1" onkeyup="calculateRatio(3)" autocomplete="off">
+				<input type="text" name="d" value="1" onkeyup="calculateRatio(4)" autocomplete="off">
 			</div>
 			
 		</form>
