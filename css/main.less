@@ -40,14 +40,23 @@
 body {
 	color: @text;
 	background: @bg;
-	//background: @bg url(../img/bg.jpg) top center no-repeat;
+	background: @bg url(../img/bg.jpg) top center no-repeat;
 	h1 {
 		font-family: 'Lobster', cursive;
 		font-size: 72px;
 		font-weight: normal;
 		text-align: center;
 		.text-shadow;
-		line-height: .75;
+		line-height: .25;
+	}
+	header {
+		display: block;
+		margin-bottom: 1em;
+		p {
+			text-align: center;
+			color: rgba(255,255,255,.5);
+			font-style: italic;
+		}
 	}
 }
 
@@ -70,16 +79,33 @@ body {
 }
 
 // Custom
+
+
+#cleft,#cright{
+	input {
+		color: #fff;
+		border: 0;
+		font-size: 4em;
+		background-color: rgba(255,255,255,0.25);
+		margin-bottom: .1em;
+		padding: .25em;
+		width: 50%;
+		.text-shadow;
+	}
+
+}
 #cleft {
 	text-align: right;
 	input {
-		font-size: 2em;
+		text-align: right;
+		margin-right: .25em;
 	}
 }
 
 #cright {
 	text-align: left;
 	input {
-		font-size: 2em; 
+		text-align: left;
+		margin-left: .25em;
 	}
 }
