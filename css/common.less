@@ -2,10 +2,13 @@
 // Vance Tran
 // 2012-06-28
 
-.text-shadow {
-	text-shadow: 0px 2px 1px rgba(0,0,0,.45);
-	filter: dropshadow(color=#000, offx=0, offy=2);
+// SAVE
+.text-shadow (@x:2px, @y:2px, @blur:1px, @alpha: 0.4){
+	text-shadow: @x @y @blur rgba(0,0,0,@alpha);
+	filter: dropshadow(color=#000, offx=@x, offy=@y);
 }
+
+// CLEAN UP
 
 .inset-shadow(@shadow-size) {
 	-webkit-box-shadow: inset 0px 0px @shadow-size 0px rgba(0, 0, 0, .5);
@@ -62,10 +65,7 @@ img {
 
 /* Via others */
 
-.text-shadow (@x:2px, @y:2px, @blur:1px, @alpha: 0.4){
-	text-shadow: @x @y @blur rgba(0,0,0,@alpha);
-	filter: dropshadow(color=#000, offx=@x, offy=@y);
-}
+
 
 .border-radius (@radius: 5px) {
 	-webkit-border-radius: @radius;
