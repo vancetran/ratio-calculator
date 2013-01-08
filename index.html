@@ -18,6 +18,25 @@
 	<script src="js/libs/modernizr-2.5.3.min.js"></script>
 	
 	
+	
+	<script>
+	
+	/*$('#widthBoxId').focusout(function(){
+		var height = $(this).val() //math calculations based on $('#hiddenRatioId')
+		$('#heightBoxId').val(height);
+	});*/
+	
+	$(document).ready(function(){
+	
+		$('#base-top').keyup(function(){
+			$('#base-top').css("border","1px solid red");
+		});
+	
+	});
+	</script>
+	
+	
+	<!--
 	<script>
 	function calculateRatio(trigger) {
 	    var a = document.ratio.a;
@@ -34,7 +53,7 @@
 	    
 	}
 	</script>
-	
+	-->
 </head>
 
 
@@ -60,13 +79,13 @@
 			
 			
 			<div id="cleft" class="half">
-				<input type="text" name="a" value="1" onkeyup="calculateRatio(1)" autocomplete="off">
-				<input type="text" name="b" value="1" onkeyup="calculateRatio(2)" autocomplete="off">
+				<input id="base-top" type="text" name="a" value="1" autocomplete="off">
+				<input id="base-bot" type="text" name="b" value="1" autocomplete="off">
 			</div>
 
 			<div id="cright" class="half">
-				<input type="text" name="c" value="1" onkeyup="calculateRatio(3)" autocomplete="off">
-				<input type="text" name="d" value="1" onkeyup="calculateRatio(4)" autocomplete="off">
+				<input id="result-top" type="text" name="c" value="1" autocomplete="off">
+				<input id="result-bot" type="text" name="d" value="1" autocomplete="off">
 			</div>
 			
 		</form>
