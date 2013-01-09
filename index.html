@@ -16,44 +16,26 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="js/less-1.3.0.min.js" type="text/javascript"></script>
 	<script src="js/libs/modernizr-2.5.3.min.js"></script>
-	
-	
-	
+
 	<script>
-	
-	/*$('#widthBoxId').focusout(function(){
-		var height = $(this).val() //math calculations based on $('#hiddenRatioId')
-		$('#heightBoxId').val(height);
-	});*/
-	
 	$(document).ready(function(){
-	
-		$('#base-top').keyup(function(){
-			$('#base-top').css("border","1px solid red");
+		$('#base-top,#result-bot').keyup(function(){			
+			var bt = $('#base-top').val();
+			var bb = $('#base-bot').val();
+			var rt = $('#result-top').val();
+			var rb = $('#result-top').val();
+			$('#result-top').val(bt*rb/bb);
+		});
+		$('#base-bot,#result-top').keyup(function(){
+			var bt = $('#base-top').val();
+			var bb = $('#base-bot').val();
+			var rt = $('#result-top').val();
+			var rb = $('#result-top').val();
+			$('#result-bot').val(bb*rt/bt);
 		});
 	
 	});
 	</script>
-	
-	
-	<!--
-	<script>
-	function calculateRatio(trigger) {
-	    var a = document.ratio.a;
-	    var b = document.ratio.b;
-	    var c = document.ratio.c;
-	    var d = document.ratio.d;
-
-	    if(trigger == 1 || trigger == 4){
-			c.value = (a.value * d.value) / b.value;
-		}		
-		else if(trigger == 2 || trigger == 3){
-			d.value =  (b.value * c.value) / a.value;
-		}
-	    
-	}
-	</script>
-	-->
 </head>
 
 
