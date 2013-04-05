@@ -1,82 +1,117 @@
-<!doctype html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Ratio Calculator by Vance Tran</title>
-	<meta name="description" content="There are many ratio calculators out there, but this one is mine.">
-
-	<meta name="viewport" content="width=device-width">
-	
-	<link rel="stylesheet/less" type="text/css" href="css/main.less">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="js/less-1.3.0.min.js" type="text/javascript"></script>
-	<script src="js/libs/modernizr-2.5.3.min.js"></script>
-
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Ratio Calculator - VT Labs</title>
+	<link rel="stylesheet" href="stylesheets/normalize.css" />
+	<link rel="stylesheet" href="stylesheets/app.css" />
+	<script src="javascripts/vendor/custom.modernizr.js"></script>
 	<script>
-	$(document).ready(function(){
-		$('#base-top,#result-bot').keyup(function(){			
-			var bt = $('#base-top').val();
-			var bb = $('#base-bot').val();
-			var rt = $('#result-top').val();
-			var rb = $('#result-bot').val();
-			$('#result-top').val(bt*rb/bb);
-		});
-		$('#base-bot,#result-top').keyup(function(){
-			var bt = $('#base-top').val();
-			var bb = $('#base-bot').val();
-			var rt = $('#result-top').val();
-			var rb = $('#result-bot').val();
-			$('#result-bot').val(bb*rt/bt);
-		});
-	
-	});
-	</script>
-	
-</head>
+	function calculateRatio(trigger) {
+		var a = document.ratio.a;
+		var b = document.ratio.b;
+		var c = document.ratio.c;
+		var d = document.ratio.d;
 
-
-<body>
-
-<nav class="full-width lab">
-	<ul class="centered">
-		<li><a href="#">VT Labs</a></li>
-	</ul>
-</nav>
-
- 
-
-<div class="container">
-	<header id="top">
-		<h1>Ratio Calculator</h1>
+		if(trigger == 1 || trigger == 4){
+			c.value = (a.value * d.value) / b.value;
+		}		
+		else if(trigger == 2 || trigger == 3){
+			d.value =  (b.value * c.value) / a.value;
+		}
 		
-		<p>For funny, attractive people.</p>
-	</header>
-	
-	<section>
-		<form name="ratio">
-			
-			
-			<div id="cleft" class="half">
-				<input id="base-top" type="text" name="a" value="1" autocomplete="off">
-				<input id="base-bot" type="text" name="b" value="1" autocomplete="off">
-			</div>
+	}
+	</script>
+</head>
+<body>
+	<section id="main-menu">
+		<div class="row">
+			<nav class="top-bar">
+				<ul class="title-area">
+				<!-- Title Area -->
+				<li class="name">
+					<h1><a href="#">VT Labs</a></h1>
+				</li>
+				<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				</ul>
 
-			<div id="cright" class="half">
-				<input id="result-top" type="text" name="c" value="1" autocomplete="off">
-				<input id="result-bot" type="text" name="d" value="1" autocomplete="off">
-			</div>
-			
-		</form>
+				<section class="top-bar-section">
+				<!-- Left Nav Section -->
+				<ul class="right">
+					<li class="divider"></li>
+					<li class="has-dropdown"><a href="#">Projects</a>
+
+						<ul class="dropdown">
+							<li><a href="#">Ratio Calculator</a></li>
+							<li><a href="#">Google Drive Parody</a></li>
+						</ul>
+					</li>
+				</ul>
+				</section>
+			</nav>
+		</div>
 	</section>
 
-</div>
+	<header>
+		<div class="row">
+			<div class="large-12 columns">
+				<h1>Ratio Calculator</h1>
+				<p>For funny, attractive people.</p>
+			</div>
+		</div>
+	</header>
+	
+	<section id="app">
+		<div class="row">
+			<form name="ratio">
+			<div id="cleft" class="large-6 small-6 columns text-right">
+				<input type="text" name="a" value="1" onkeyup="calculateRatio(1)" autocomplete="off">
+				<input type="text" name="b" value="1" onkeyup="calculateRatio(2)" autocomplete="off">
+			</div>
+			
+			<div id="cright" class="large-6 small-6 columns">
+				<input type="text" name="c" value="1" onkeyup="calculateRatio(3)" autocomplete="off">
+				<input type="text" name="d" value="1" onkeyup="calculateRatio(4)" autocomplete="off">
+			</div>
+			</form>
+		</div>
+	</section>
+	
+	<footer class="row">
+
+		<div class="large-12 columns text-center">
+			<p>&copy; Vance Tran</p>
+		</div>
+	</footer>
+	
+	<script>
+	document.write('<script src=' +
+	('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
+	'.js><\/script>')
+	</script>
+  
+<script src="javascripts/foundation/foundation.js"></script>
+<script src="javascripts/foundation/foundation.alerts.js"></script>
+<script src="javascripts/foundation/foundation.clearing.js"></script>
+<script src="javascripts/foundation/foundation.cookie.js"></script>
+<script src="javascripts/foundation/foundation.dropdown.js"></script>
+<script src="javascripts/foundation/foundation.forms.js"></script>
+<script src="javascripts/foundation/foundation.joyride.js"></script>
+<script src="javascripts/foundation/foundation.magellan.js"></script>
+<script src="javascripts/foundation/foundation.orbit.js"></script>
+<script src="javascripts/foundation/foundation.placeholder.js"></script>
+<script src="javascripts/foundation/foundation.reveal.js"></script>
+<script src="javascripts/foundation/foundation.section.js"></script>
+<script src="javascripts/foundation/foundation.tooltips.js"></script>
+<script src="javascripts/foundation/foundation.topbar.js"></script>
+
+<script>
+$(document).foundation();
+</script>
+
 </body>
-
-
-
 </html>

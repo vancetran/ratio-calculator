@@ -1,0 +1,89 @@
+// Custom SASS
+// Vance Tran, vancetran.com
+
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import "compass/css3";
+
+$primary: #a859c1;
+$secondary: #fff;
+$text: #fff;
+$link: #fff;
+$bg: #4e0068;
+
+$default-text-shadow-color: rgba(black, 0.5);
+$default-text-shadow-blur: 20px;
+$default-text-shadow-v-offset: 10px;
+
+body {
+	color: $text;
+	background: $bg;
+	background: $bg url(../img/bg.jpg) top center no-repeat;
+	
+	header {
+		h1 {
+			color: $text;
+			font-family: 'Lobster', cursive;
+			font-size: 5em;
+			font-weight: normal;
+			text-align: center;
+			line-height: .75;
+			margin-bottom: .25em;
+			margin-top: 2em;
+			@include single-text-shadow;
+			
+			@media only screen and (max-width: 940px) {
+				font-size: 3em;
+				margin-bottom: .5em;
+			}
+		}
+		float: left;
+		width: 100%;
+		margin-bottom: 2em;
+		p {
+			text-align: center;
+			color: rgba(255,255,255,.5);
+			font-style: italic;
+		}
+	}
+}
+
+#main-menu {
+	background: #000;
+}
+
+#cleft,#cright {
+	input {
+		color: $text;
+		font-size: 4em;
+		background-color: rgba(255,255,255,0.25);
+		margin-bottom: .1em;
+		@media only screen and (max-width: 940px) {
+			font-size: 3em;
+		}
+		@media only screen and (max-width: 640px) {
+			font-size: 2em;
+		}
+		@media only screen and (max-width: 320px) {
+			font-size: 1em;
+		}
+	}
+
+}
+#cleft {
+	text-align: right;
+	input {
+		text-align: right;
+	}
+}
+
+#cright {
+	text-align: left;
+	input {
+		text-align: left;
+	}
+}
+
+footer {
+	padding-top: 5em;
+	text-align: center;
+}

@@ -1,0 +1,6 @@
+﻿# Ignore these files and folders
+.sass-cache
+
+# Ignore data and junk files
+*.DS_Store
+*Thumbs.DB
