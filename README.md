@@ -1,4 +1,4 @@
-# Ratio Calculator
+# Ratio Calculator 1.2
 
 by Vance Tran, vancetran.com, @vancetran
 
